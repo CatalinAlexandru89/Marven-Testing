@@ -71,6 +71,7 @@ public class ThirdPage extends PageObject{
         this.fillCountry();
         this.fillCity();
         this.fillPostCode();
+        Utils.waitForElementToLoad(3);
         this.clickNextThree();
     }
 

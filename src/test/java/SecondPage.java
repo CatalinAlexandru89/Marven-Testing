@@ -53,6 +53,7 @@ public class SecondPage extends PageObject {
         fillUserName();
         fillPassword();
         fillConfirmPassword();
+        Utils.waitForElementToLoad(3);
         clickNext();
     }
 

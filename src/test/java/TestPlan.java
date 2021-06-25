@@ -185,19 +185,21 @@ public class TestPlan {
         Utils.waitForElementToLoad(3);
     }
 
-    //-------------------------------------------------Test 10
+    //--------------------------------------------------------------Test 10
 
-    @Test(testName = "Check payment information")
-    public static void testPaymentInformation() {
+    @Test(testName = "Check course option and payment information")
+    public static void testCourseOptionAndPaymentInformation() {
         driver.get(Utils.SECOND_URL);
         SecondPage second = new SecondPage(driver);
         second.NavigateToThirdPage();
+        Utils.waitForElementToLoad(3);
 
         ThirdPage third = new ThirdPage(driver);
         third.navigateToForthPage();
 
         TenthPage testZece = new TenthPage(driver);
         testZece.clickAutomationAndManual();
+        Utils.waitForElementToLoad(3);
         testZece.clickNextForth();
         Utils.waitForElementToLoad(3);
         testZece.fillCardHolderName();
