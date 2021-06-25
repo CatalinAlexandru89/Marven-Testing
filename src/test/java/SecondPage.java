@@ -4,8 +4,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class SecondPage extends PageObject {
 
+    private final String typeFirstName = "Jack";
+    private final String typeLastName = "Daniels";
     private final String typeUsername = "Jack89";
-    private final String typeEmail = "jack_daniels89@gmail.com";
     private final String typePassword = "***********";
     private final String typeConfirmPassword = "***********";
 
@@ -14,30 +15,45 @@ public class SecondPage extends PageObject {
     public void clickStartEnrollment() {
         this.startEnrollment.click();
     }
-    @FindBy(xpath = "//*[@id=\"step1\"]/div/input[1]")
-    private WebElement username;
-    public void fillUsername() {
-        this.username.sendKeys(typeUsername);
+    @FindBy(xpath = "//*[@id=\"firstName\"]")
+    private WebElement firstName;
+    public void fillFirstName() {
+        this.firstName.sendKeys(typeFirstName);
     }
-    @FindBy(xpath = "//*[@id=\"step1\"]/div/input[2]")
-    private WebElement email;
-    public void fillEmail() {
-        this.email.sendKeys(typeEmail);
+    @FindBy(xpath = "//*[@id=\"lastName\"]")
+    private WebElement lastName;
+    public void fillLastName() {
+        this.lastName.sendKeys(typeLastName);
     }
-    @FindBy(xpath = "//*[@id=\"step1\"]/div/input[3]")
+    @FindBy(xpath = "//*[@id=\"username\"]")
+    private WebElement userName;
+    public void fillUserName() {
+        this.userName.sendKeys(typeUsername);
+    }
+
+    @FindBy(xpath = "//*[@id=\"password\"]")
     private WebElement password;
     public void fillPassword() {
         this.password.sendKeys(typePassword);
     }
-    @FindBy(xpath = "//*[@id=\"step1\"]/div/input[4]")
+    @FindBy(xpath = "//*[@id=\"cpassword\"]")
     private WebElement confirmPassword;
     public void fillConfirmPassword() {
         this.confirmPassword.sendKeys(typeConfirmPassword);
     }
-    @FindBy(xpath = "//*[@id=\"step1\"]/button")
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
     private WebElement next;
     public void clickNext() {
         this.next.click();
+    }
+
+    public void NavigateToThirdPage() {
+        fillFirstName();
+        fillLastName();
+        fillUserName();
+        fillPassword();
+        fillConfirmPassword();
+        clickNext();
     }
 
 

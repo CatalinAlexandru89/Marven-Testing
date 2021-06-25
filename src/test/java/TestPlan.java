@@ -1,3 +1,4 @@
+import jdk.jshell.execution.Util;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
@@ -12,7 +13,7 @@ public class TestPlan {
         System.setProperty("webdriver.chrome.driver", Utils.CHROME_DRIVER_LOCATION);
     }
 
-    //Test 1 (codul e in MainPage)
+    //----------------------------------------Test 1 (codul e in MainPage)
 
     @Test(testName = "Click Questions Navbar")
     public static void clickButtonOne() {
@@ -25,12 +26,11 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
         testUnu.clickQuestionTwo();
         Utils.waitForElementToLoad(2);
-
     }
 
-    //Test 2 (codul e in SecondPage)
+    //---------------------------------------------------------------------Test 2 (codul e in SecondPage)
 
-    @Test(testName = "Click start enrollment")
+    @Test(testName = "Click start enrollment and Personal Information Page")
     public static void clickButtonTwo() {
         driver.get(Utils.BASE_URL);
         SecondPage testDoi = new SecondPage(driver);
@@ -39,8 +39,9 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
 
         driver.get(Utils.SECOND_URL);
-        testDoi.fillUsername();
-        testDoi.fillEmail();
+        testDoi.fillFirstName();
+        testDoi.fillLastName();
+        testDoi.fillUserName();
         testDoi.fillPassword();
         testDoi.fillConfirmPassword();
         Utils.waitForElementToLoad(3);
@@ -48,55 +49,29 @@ public class TestPlan {
         Utils.waitForElementToLoad(1);
     }
 
-    //Test 3 (codul e in ThirdPage)
+    //-----------------------------------------------Test 3 (codul e in ThirdPage)
 
-    @Test(testName = "Personal Information Page")
+    @Test(testName = "Contact information page")
     public static void goToThirdPage() {
         driver.get(Utils.THIRD_URL);
+        SecondPage second = new SecondPage(driver);
+        second.NavigateToThirdPage();
+
         ThirdPage testTrei = new ThirdPage(driver);
-
-
-        testTrei.clickNext();
-        testTrei.fillFirstName();
-        testTrei.fillLastName();
+        Utils.waitForElementToLoad(1);
+        testTrei.fillEmail();
         testTrei.fillPhoneNumber();
         Utils.waitForElementToLoad(2);
         testTrei.deletePhoneNumberTwo();
         Utils.waitForElementToLoad(1);
         testTrei.fillPhoneNumberThree();
+        testTrei.fillCountry();
+        testTrei.fillCity();
+        testTrei.fillPostCode();
+        Utils.waitForElementToLoad(1);
         testTrei.clickNextThree();
         Utils.waitForElementToLoad(2);
-
     }
-
-
-    /*----------------Ruleaza tot dintr-o bucata (tot codul e in MainPage Test 2 si 3)
-
-    @Test(testName = "Click start enrollment")
-    public static void clickButtonTwo() {
-        driver.get(Utils.BASE_URL);
-        MainPage testDoi = new MainPage(driver);
-
-        testDoi.clickStartEnrollment();
-        Utils.waitForElementToLoad(3);
-
-        driver.get(Utils.SECOND_URL);
-        testDoi.fillUsername();
-        testDoi.fillEmail();
-        testDoi.fillPassword();
-        testDoi.fillConfirmPassword();
-        Utils.waitForElementToLoad(3);
-        testDoi.clickNext();
-
-        testDoi.fillFirstName();
-        testDoi.fillLastName();
-        testDoi.fillPhoneNumber();
-        Utils.waitForElementToLoad(3);
-        testDoi.deletePhoneNumberTwo();
-        Utils.waitForElementToLoad(3);
-        testDoi.fillPhoneNumberThree();
-        Utils.waitForElementToLoad(3);
-    }------------------------------------------------------*/
 
     //--------------------------------------------------------Test 4
 
@@ -184,6 +159,62 @@ public class TestPlan {
     }
 
     //-------------------------------------------------Test 8
+
+    @Test(testName = "CHeck unhappy flow newsletter")
+    public static void testUnhappyNewsletter() {
+        driver.get(Utils.BASE_URL);
+        EightPage testOpt = new EightPage(driver);
+
+        testOpt.fillNewsletter();
+        testOpt.clickSubmitNewsletter();
+        Utils.waitForElementToLoad(5);
+    }
+
+    //-------------------------------------------------Test 9
+
+    @Test(testName = "CHeck happy flow newsletter")
+    public static void testHappyNewsletter() {
+        driver.get(Utils.BASE_URL);
+        NinthPage testNoua = new NinthPage(driver);
+
+        testNoua.fillNewsletterTwo();
+        Utils.waitForElementToLoad(2);
+        testNoua.clickSubmitNewsletterTwo();
+        Utils.waitForElementToLoad(2);
+        testNoua.closePopUpTwo();
+        Utils.waitForElementToLoad(3);
+    }
+
+    //-------------------------------------------------Test 10
+
+    @Test(testName = "Check payment information")
+    public static void testPaymentInformation() {
+        driver.get(Utils.SECOND_URL);
+        SecondPage second = new SecondPage(driver);
+        second.NavigateToThirdPage();
+
+        ThirdPage third = new ThirdPage(driver);
+        third.navigateToForthPage();
+
+        TenthPage testZece = new TenthPage(driver);
+        testZece.clickAutomationAndManual();
+        testZece.clickNextForth();
+        Utils.waitForElementToLoad(3);
+        testZece.fillCardHolderName();
+        testZece.fillCardNumber();
+        testZece.fillCVC();
+        Utils.waitForElementToLoad(2);
+        testZece.clickMonthDropdown();
+        Utils.waitForElementToLoad(3);
+        testZece.clickPickMonth();
+        Utils.waitForElementToLoad(2);
+        testZece.clickYearDropdown();
+        Utils.waitForElementToLoad(3);
+        testZece.clickPickYear();
+        Utils.waitForElementToLoad(2);
+        testZece.clickNextFifth();
+        Utils.waitForElementToLoad(5);
+    }
 
 
     @AfterSuite

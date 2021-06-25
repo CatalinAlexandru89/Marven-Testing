@@ -4,46 +4,74 @@ import org.openqa.selenium.support.FindBy;
 
 public class ThirdPage extends PageObject{
 
-    private final String typeFirstName = "Jack";
-    private final String typeLastName = "Daniels";
+    private final String typeEmail = "jack_daniels89@gmail.com";
+    private final String typeCountry = "Romania";
+    private final String typeCity = "Brasov";
+    private final String typePostCode = "500789";
     private final String typePhoneNumber = "0799.899.999";
     private final String secondTypePhoneNumber = "0799-222-101";
 
-    @FindBy(xpath = "//*[@id=\"step1\"]/button")
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
     private WebElement next;
     public void clickNext() {
         this.next.click();
     }
 
-    @FindBy(xpath = "//*[@id=\"step2\"]/div/input[1]")
-    private WebElement firstName;
-    public void fillFirstName() {
-        this.firstName.sendKeys(typeFirstName);
+    @FindBy(xpath = "//*[@id=\"email\"]")
+    private WebElement email;
+    public void fillEmail() {
+        this.email.sendKeys(typeEmail);
     }
-    @FindBy(xpath = "//*[@id=\"step2\"]/div/input[2]")
-    private WebElement lastName;
-    public void fillLastName() {
-        this.lastName.sendKeys(typeLastName);
-    }
-    @FindBy(xpath = "//*[@id=\"step2\"]/div/input[3]")
+
+    @FindBy(xpath = "//*[@id=\"phone\"]")
     private WebElement phoneNumber;
     public void fillPhoneNumber() {
         this.phoneNumber.sendKeys(typePhoneNumber);
     }
-    @FindBy(xpath = "//*[@id=\"step2\"]/div/input[3]")
+
+    @FindBy(xpath = "//*[@id=\"phone\"]")
     private WebElement phoneNumberTwo;
     public void deletePhoneNumberTwo() {
         this.phoneNumberTwo.clear();
     }
-    @FindBy(xpath = "//*[@id=\"step2\"]/div/input[3]")
+
+    @FindBy(xpath = "//*[@id=\"phone\"]")
     private WebElement phoneNumberThree;
     public void fillPhoneNumberThree() {
         this.phoneNumber.sendKeys(secondTypePhoneNumber);
     }
-    @FindBy(xpath = "//*[@id=\"step2\"]/button[2]")
+
+    @FindBy(xpath = "//*[@id=\"country\"]")
+    private WebElement country;
+    public void fillCountry() {
+        this.country.sendKeys(typeCountry);
+    }
+
+    @FindBy(xpath = "//*[@id=\"city\"]")
+    private WebElement city;
+    public void fillCity() {
+        this.city.sendKeys(typeCity);
+    }
+
+    @FindBy(xpath = "//*[@id=\"postCode\"]")
+    private WebElement postCode;
+    public void fillPostCode() {
+        this.postCode.sendKeys(typePostCode);
+    }
+
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/button[2]")
     private WebElement nextThree;
     public void clickNextThree() {
         this.nextThree.click();
+    }
+
+    public void navigateToForthPage() {
+        this.fillEmail();
+        this.fillPhoneNumberThree();
+        this.fillCountry();
+        this.fillCity();
+        this.fillPostCode();
+        this.clickNextThree();
     }
 
 
