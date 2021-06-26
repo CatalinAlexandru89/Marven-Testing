@@ -8,7 +8,7 @@ public class TenthPage extends PageObject {
     private final String typeCardNumber = "3547-3321-0897-6589";
     private final String typeCVC = "203";
 
-    @FindBy(xpath = "//*[@id=\"flexRadioButton3\"]")
+    @FindBy(xpath = "//*[@id=\"flexRadioButton3\"]") //click Course Option
     private WebElement automationAndManual;
     public void clickAutomationAndManual() {
         this.automationAndManual.click();

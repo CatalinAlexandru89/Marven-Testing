@@ -73,7 +73,7 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
     }
 
-    //--------------------------------------------------------Test 4
+    //--------------------------------------------------------Test 4(codul este in ForthPage)
 
     @Test(testName = "Check Virtual read more")
     public static void testVirtualReadMore() {
@@ -90,7 +90,7 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
     }
 
-    //------------------------------------------------------Test 5
+    //------------------------------------------------------Test 5(codul este in FifthPage)
 
     @Test(testName = "Check hybrid read more")
     public static void testHybridReadMore() {
@@ -108,7 +108,7 @@ public class TestPlan {
 
     }
 
-    //------------------------------------------------------Test 6
+    //------------------------------------------------------Test 6(codul este in SixthPage)
 
     @Test(testName = "Check In Person read more")
     public static void testInPersonReadMore() {
@@ -125,7 +125,7 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
     }
 
-    //------------------------------------------------------Test 7
+    //------------------------------------------------------Test 7(codul este in SeventhPage)
 
     @Test(testName = "Check facebook Jane Doe")
     public static void testFacebookJaneDoe() {
@@ -158,7 +158,7 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
     }
 
-    //-------------------------------------------------Test 8
+    //-------------------------------------------------Test 8(codul este in EighthPage)
 
     @Test(testName = "CHeck unhappy flow newsletter")
     public static void testUnhappyNewsletter() {
@@ -170,7 +170,7 @@ public class TestPlan {
         Utils.waitForElementToLoad(5);
     }
 
-    //-------------------------------------------------Test 9
+    //-------------------------------------------------Test 9(codul este in NinthPage)
 
     @Test(testName = "CHeck happy flow newsletter")
     public static void testHappyNewsletter() {
@@ -185,7 +185,7 @@ public class TestPlan {
         Utils.waitForElementToLoad(3);
     }
 
-    //--------------------------------------------------------------Test 10
+    //--------------------------------------------------------------Test 10(codul este in TenthPage)
 
     @Test(testName = "Check course option and payment information")
     public static void testCourseOptionAndPaymentInformation() {
@@ -216,6 +216,19 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
         testZece.clickNextFifth();
         Utils.waitForElementToLoad(5);
+    }
+
+    //---------------------------------------------------------------Test 11 (back-up)
+
+    @Test(testName = "Navigate back to top")
+    public static void testBackToTopButton() {
+        driver.get(Utils.BASE_URL);
+        EleventhPage testUnsprezece = new EleventhPage(driver);
+
+        testUnsprezece.waitFooterScroll();
+        Utils.waitForElementToLoad(2);
+        testUnsprezece.clickArrowTop();
+        Utils.waitForElementToLoad(3);
     }
 
 
