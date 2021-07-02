@@ -8,9 +8,8 @@ public class Utils {
     final static String CHROME_DRIVER_LOCATION = "chromedriver.exe";
     final static String BASE_URL = "C:/Users/stephanie/Desktop/Testing-Env/index.html#";
     final static String SECOND_URL = "C:/Users/stephanie/Desktop/Testing-Env/routes/enrollment.html";
-    final static String THIRD_URL = "C:/Users/stephanie/Desktop/Testing-Env/routes/enrollment.html";
     final static String FORTH_URL = "C:/Users/stephanie/Desktop/Testing-Env/routes/virtual.html";
-    final static String FIFTH_URL = "C:/Users/stephanie/Desktop/Testing-Env/routes/virtual.html";
+    final static String FIFTH_URL = "C:/Users/stephanie/Desktop/Testing-Env/routes/hybrid.html";
     final static String SIXTH_URL = "C:/Users/stephanie/Desktop/Testing-Env/routes/in_person.html";
     final static String FACEBOOK_URL = "https://www.facebook.com/";
     final static String LINKEDIN_URL = "https://www.linkedin.com/";

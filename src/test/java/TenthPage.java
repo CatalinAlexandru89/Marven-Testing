@@ -43,6 +43,7 @@ public class TenthPage extends PageObject {
     public void clickMonthDropdown() {
         this.monthDropdown.click();
     }
+
     @FindBy(xpath = "//*[@id=\"month\"]/option[8]")
     private WebElement pickMonth;
     public void clickPickMonth() {
@@ -54,6 +55,7 @@ public class TenthPage extends PageObject {
     public void clickYearDropdown() {
         this.yearDropdown.click();
     }
+
     @FindBy(xpath = "//*[@id=\"year\"]/option[11]")
     private WebElement pickYear;
     public void clickPickYear() {

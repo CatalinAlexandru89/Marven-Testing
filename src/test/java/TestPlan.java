@@ -53,7 +53,7 @@ public class TestPlan {
 
     @Test(testName = "Contact information page")
     public static void goToThirdPage() {
-        driver.get(Utils.THIRD_URL);
+        driver.get(Utils.SECOND_URL);
         SecondPage second = new SecondPage(driver);
         second.NavigateToThirdPage();
 
@@ -73,116 +73,109 @@ public class TestPlan {
         Utils.waitForElementToLoad(2);
     }
 
-    //--------------------------------------------------------Test 4(codul este in ForthPage)
+    //--------------------------------------------------------Test 4(codul este in ForthPage + MainPage)
 
     @Test(testName = "Check Virtual read more")
     public static void testVirtualReadMore() {
         driver.get(Utils.BASE_URL);
-        ForthPage testPatru = new ForthPage(driver);
-
+        MainPage testPatru = new MainPage(driver);
         testPatru.waitVirtualScroll();
         testPatru.clickVirtualReadMore();
         Utils.waitForElementToLoad(2);
 
         driver.get(Utils.FORTH_URL);
-
-        testPatru.clickReturnVirtual();
+        ForthPage testPatruDoi = new ForthPage(driver);
+        testPatruDoi.clickReturnVirtual();
         Utils.waitForElementToLoad(2);
     }
 
-    //------------------------------------------------------Test 5(codul este in FifthPage)
+    //------------------------------------------------------Test 5(codul este in FifthPage + MainPage)
 
     @Test(testName = "Check hybrid read more")
     public static void testHybridReadMore() {
         driver.get(Utils.BASE_URL);
-        FifthPage testCinci = new FifthPage(driver);
-
+        MainPage testCinci = new MainPage(driver);
         testCinci.waitHybridScroll();
         testCinci.clickHybridReadMore();
         Utils.waitForElementToLoad(2);
 
         driver.get(Utils.FIFTH_URL);
-
-        testCinci.clickReturnHybrid();
+        FifthPage testCinciDoi = new FifthPage(driver);
+        testCinciDoi.clickReturnHybrid();
         Utils.waitForElementToLoad(2);
-
     }
 
-    //------------------------------------------------------Test 6(codul este in SixthPage)
+    //------------------------------------------------------Test 6(codul este in SixthPage + MainPage)
 
     @Test(testName = "Check In Person read more")
     public static void testInPersonReadMore() {
         driver.get(Utils.BASE_URL);
-        SixthPage testSase = new SixthPage(driver);
-
+        MainPage testSase = new MainPage(driver);
         testSase.waitInPersonScroll();
         testSase.clickInPersonReadMore();
         Utils.waitForElementToLoad(2);
 
         driver.get(Utils.SIXTH_URL);
-
-        testSase.clickReturnInPerson();
+        SixthPage testSaseDoi = new SixthPage(driver);
+        testSaseDoi.clickReturnInPerson();
         Utils.waitForElementToLoad(2);
     }
 
-    //------------------------------------------------------Test 7(codul este in SeventhPage)
+    //------------------------------------------------------Test 7(codul este in MainPage)
 
     @Test(testName = "Check facebook Jane Doe")
     public static void testFacebookJaneDoe() {
         driver.get(Utils.BASE_URL);
-        SeventhPage testSapte = new SeventhPage(driver);
-
+        MainPage testSapte = new MainPage(driver);
         testSapte.clickInstructorsNavBar();
         Utils.waitForElementToLoad(2);
         testSapte.clickFacebookJaneDoe();
-        Utils.waitForElementToLoad(2);
+        Utils.waitForElementToLoad(3);
 
         driver.get(Utils.FACEBOOK_URL);
         testSapte.back();
-        Utils.waitForElementToLoad(2);
+        Utils.waitForElementToLoad(3);
 
         driver.get(Utils.BASE_URL);
         testSapte.clickLinkedInJaneDoe();
-        Utils.waitForElementToLoad(2);
+        Utils.waitForElementToLoad(3);
 
         driver.get(Utils.LINKEDIN_URL);
         testSapte.back();
-        Utils.waitForElementToLoad(2);
+        Utils.waitForElementToLoad(3);
 
         driver.get(Utils.BASE_URL);
         testSapte.clickInstagramJaneDoe();
-        Utils.waitForElementToLoad(2);
+        Utils.waitForElementToLoad(3);
 
         driver.get(Utils.INSTAGRAM_URL);
         testSapte.back();
         Utils.waitForElementToLoad(2);
     }
 
-    //-------------------------------------------------Test 8(codul este in EighthPage)
+    //-------------------------------------------------Test 8(codul este in MainPage)
 
-    @Test(testName = "CHeck unhappy flow newsletter")
+    @Test(testName = "Check unhappy flow newsletter")
     public static void testUnhappyNewsletter() {
         driver.get(Utils.BASE_URL);
-        EightPage testOpt = new EightPage(driver);
-
+        MainPage testOpt = new MainPage(driver);
         testOpt.fillNewsletter();
         testOpt.clickSubmitNewsletter();
         Utils.waitForElementToLoad(5);
     }
 
-    //-------------------------------------------------Test 9(codul este in NinthPage)
+    //-------------------------------------------------Test 9(codul este in MainPage)
 
-    @Test(testName = "CHeck happy flow newsletter")
+    @Test(testName = "Check happy flow newsletter")
     public static void testHappyNewsletter() {
         driver.get(Utils.BASE_URL);
-        NinthPage testNoua = new NinthPage(driver);
-
+        MainPage testNoua = new MainPage(driver);
         testNoua.fillNewsletterTwo();
         Utils.waitForElementToLoad(2);
         testNoua.clickSubmitNewsletterTwo();
-        Utils.waitForElementToLoad(2);
-        testNoua.closePopUpTwo();
         Utils.waitForElementToLoad(3);
+        testNoua.closePopUpTwo();
+        Utils.waitForElementToLoad(2);
     }
 
     //--------------------------------------------------------------Test 10(codul este in TenthPage)
@@ -223,8 +216,7 @@ public class TestPlan {
     @Test(testName = "Navigate back to top")
     public static void testBackToTopButton() {
         driver.get(Utils.BASE_URL);
-        EleventhPage testUnsprezece = new EleventhPage(driver);
-
+        MainPage testUnsprezece = new MainPage(driver);
         testUnsprezece.waitFooterScroll();
         Utils.waitForElementToLoad(2);
         testUnsprezece.clickArrowTop();
