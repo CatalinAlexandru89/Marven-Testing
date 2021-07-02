@@ -1,6 +1,7 @@
 import jdk.jshell.execution.Util;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -19,13 +20,13 @@ public class TestPlan {
     public static void clickButtonOne() {
         driver.get(Utils.BASE_URL);
         MainPage testUnu = new MainPage(driver);
-
         testUnu.clickQuestionsNavbar();
         Utils.waitForElementToLoad(3);
         testUnu.clickQuestionOne();
         Utils.waitForElementToLoad(2);
         testUnu.clickQuestionTwo();
         Utils.waitForElementToLoad(2);
+        Assert.assertEquals(testUnu.checkTextTestOne(), "Frequently Asked Questions");
     }
 
     //---------------------------------------------------------------------Test 2 (codul e in SecondPage)
@@ -34,7 +35,6 @@ public class TestPlan {
     public static void clickButtonTwo() {
         driver.get(Utils.BASE_URL);
         SecondPage testDoi = new SecondPage(driver);
-
         testDoi.clickStartEnrollment();
         Utils.waitForElementToLoad(2);
 
@@ -87,6 +87,7 @@ public class TestPlan {
         ForthPage testPatruDoi = new ForthPage(driver);
         testPatruDoi.clickReturnVirtual();
         Utils.waitForElementToLoad(2);
+        Assert.assertEquals(testPatru.checkTextTestFour(), "Virtual");
     }
 
     //------------------------------------------------------Test 5(codul este in FifthPage + MainPage)
@@ -103,6 +104,7 @@ public class TestPlan {
         FifthPage testCinciDoi = new FifthPage(driver);
         testCinciDoi.clickReturnHybrid();
         Utils.waitForElementToLoad(2);
+        Assert.assertEquals(testCinci.checkTextTestFive(), "Hybrid");
     }
 
     //------------------------------------------------------Test 6(codul este in SixthPage + MainPage)
@@ -119,6 +121,7 @@ public class TestPlan {
         SixthPage testSaseDoi = new SixthPage(driver);
         testSaseDoi.clickReturnInPerson();
         Utils.waitForElementToLoad(2);
+        Assert.assertEquals(testSase.checkTextTestSix(), "In Person");
     }
 
     //------------------------------------------------------Test 7(codul este in MainPage)
@@ -128,13 +131,15 @@ public class TestPlan {
         driver.get(Utils.BASE_URL);
         MainPage testSapte = new MainPage(driver);
         testSapte.clickInstructorsNavBar();
-        Utils.waitForElementToLoad(2);
+        Utils.waitForElementToLoad(3);
+        Assert.assertEquals(testSapte.checkTextTestSeventh(), "Our Instructors");
         testSapte.clickFacebookJaneDoe();
         Utils.waitForElementToLoad(3);
 
         driver.get(Utils.FACEBOOK_URL);
         testSapte.back();
         Utils.waitForElementToLoad(3);
+        Assert.assertEquals(testSapte.checkTextTestSeventh(), "Our Instructors");
 
         driver.get(Utils.BASE_URL);
         testSapte.clickLinkedInJaneDoe();
@@ -143,6 +148,7 @@ public class TestPlan {
         driver.get(Utils.LINKEDIN_URL);
         testSapte.back();
         Utils.waitForElementToLoad(3);
+        Assert.assertEquals(testSapte.checkTextTestSeventh(), "Our Instructors");
 
         driver.get(Utils.BASE_URL);
         testSapte.clickInstagramJaneDoe();
@@ -151,6 +157,7 @@ public class TestPlan {
         driver.get(Utils.INSTAGRAM_URL);
         testSapte.back();
         Utils.waitForElementToLoad(2);
+        Assert.assertEquals(testSapte.checkTextTestSeventh(), "Our Instructors");
     }
 
     //-------------------------------------------------Test 8(codul este in MainPage)
@@ -220,9 +227,10 @@ public class TestPlan {
         testUnsprezece.waitFooterScroll();
         Utils.waitForElementToLoad(2);
         testUnsprezece.clickArrowTop();
-        Utils.waitForElementToLoad(3);
+        Utils.waitForElementToLoad(2);
+        Assert.assertEquals(testUnsprezece.verifyTextHeaderDoi(), "Certified Software Tester"); //--verifica textul din "..."
+        Utils.waitForElementToLoad(1);
     }
-
 
     @AfterSuite
     public static void cleanUp() {

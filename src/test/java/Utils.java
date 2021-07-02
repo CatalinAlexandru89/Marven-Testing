@@ -22,12 +22,10 @@ public class Utils {
             e.printStackTrace();
         }
     }
-
     public static void scrollToElement(WebDriver driver, WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
         waitForElementToLoad(3);
     }
-
     public static void navigateBack(WebDriver driver) {
         driver.navigate().back();
     }
