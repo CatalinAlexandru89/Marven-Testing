@@ -46,6 +46,8 @@ public class TestPlan {
         Utils.waitForElementToLoad(3);
         testDoi.clickNext();
         Utils.waitForElementToLoad(1);
+        Assert.assertEquals(testDoi.checkTextContactInformation(), "Contact information");
+        Utils.waitForElementToLoad(2);
     }
 
     //-----------------------------------------------Test 3 (codul e in ThirdPage)
@@ -69,7 +71,8 @@ public class TestPlan {
         testTrei.fillPostCode();
         Utils.waitForElementToLoad(1);
         testTrei.clickNextThree();
-        Utils.waitForElementToLoad(2);
+        Assert.assertEquals(testTrei.checkTextCourseOptions(), "Course options");
+        Utils.waitForElementToLoad(3);
     }
 
     //--------------------------------------------------------Test 4(codul este in ForthPage + MainPage)
@@ -214,7 +217,9 @@ public class TestPlan {
         testZece.clickPickYear();
         Utils.waitForElementToLoad(2);
         testZece.clickNextFifth();
-        Utils.waitForElementToLoad(5);
+        Utils.waitForElementToLoad(1);
+        Assert.assertEquals(testZece.checkTextSuccess(), "Success!");
+        Utils.waitForElementToLoad(3);
     }
 
     //---------------------------------------------------------------Test 11 (back-up)

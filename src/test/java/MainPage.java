@@ -121,7 +121,7 @@ public class MainPage extends PageObject {
 
     //--------------------------------------------------------------------------Test 8
 
-    private final String typeNewsletter = "JackDaniels@gmailcom";
+    private final String TypeNewsletter = "JackDaniels@gmailcom";
 
     @FindBy(xpath = "/html/body/section[2]/div/div/div/input")
     private WebElement newsletter;
@@ -129,7 +129,7 @@ public class MainPage extends PageObject {
     private WebElement submitNewsletter;
 
     public void fillNewsletter() {
-        this.newsletter.sendKeys(typeNewsletter);
+        this.newsletter.sendKeys(TypeNewsletter);
     }
     public void clickSubmitNewsletter() {
         this.submitNewsletter.click();
@@ -137,7 +137,7 @@ public class MainPage extends PageObject {
 
     //---------------------------------------------------------------------------Test 9
 
-    private final String typeNewsletterTwo = "JackDaniels@gmail.com";
+    private final String TypeNewsletterTwo = "JackDaniels@gmail.com";
 
     @FindBy(xpath = "/html/body/section[2]/div/div/div/input")
     private WebElement newsletterTwo;
@@ -145,7 +145,7 @@ public class MainPage extends PageObject {
     private WebElement submitNewsletterTwo;
 
     public void fillNewsletterTwo() {
-        this.newsletterTwo.sendKeys(typeNewsletterTwo);
+        this.newsletterTwo.sendKeys(TypeNewsletterTwo);
     }
     public void clickSubmitNewsletterTwo() {
         this.submitNewsletterTwo.click();

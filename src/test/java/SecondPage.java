@@ -4,11 +4,11 @@ import org.openqa.selenium.support.FindBy;
 
 public class SecondPage extends PageObject {
 
-    private final String typeFirstName = "Jack";
-    private final String typeLastName = "Daniels";
-    private final String typeUsername = "Jack89";
-    private final String typePassword = "***********";
-    private final String typeConfirmPassword = "***********";
+    private final String TypeFirstName = "Jack";
+    private final String TypeLastName = "Daniels";
+    private final String TypeUsername = "Jack89";
+    private final String TypePassword = "***********";
+    private final String TypeConfirmPassword = "***********";
 
     @FindBy(xpath = "/html/body/section[1]/div/div/div/a")
     private WebElement startEnrollment;
@@ -24,27 +24,32 @@ public class SecondPage extends PageObject {
     private WebElement confirmPassword;
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
     private WebElement next;
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/h3")
+    private WebElement textContactInformation;
 
     public void clickStartEnrollment() {
         this.startEnrollment.click();
     }
     public void fillFirstName() {
-        this.firstName.sendKeys(typeFirstName);
+        this.firstName.sendKeys(TypeFirstName);
     }
     public void fillLastName() {
-        this.lastName.sendKeys(typeLastName);
+        this.lastName.sendKeys(TypeLastName);
     }
     public void fillUserName() {
-        this.userName.sendKeys(typeUsername);
+        this.userName.sendKeys(TypeUsername);
     }
     public void fillPassword() {
-        this.password.sendKeys(typePassword);
+        this.password.sendKeys(TypePassword);
     }
     public void fillConfirmPassword() {
-        this.confirmPassword.sendKeys(typeConfirmPassword);
+        this.confirmPassword.sendKeys(TypeConfirmPassword);
     }
     public void clickNext() {
         this.next.click();
+    }
+    public String checkTextContactInformation() {
+        return this.textContactInformation.getText();
     }
 
     public void NavigateToThirdPage() {

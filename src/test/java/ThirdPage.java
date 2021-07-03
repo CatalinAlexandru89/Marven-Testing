@@ -4,12 +4,12 @@ import org.openqa.selenium.support.FindBy;
 
 public class ThirdPage extends PageObject{
 
-    private final String typeEmail = "jack_daniels89@gmail.com";
-    private final String typeCountry = "Romania";
-    private final String typeCity = "Brasov";
-    private final String typePostCode = "500789";
-    private final String typePhoneNumber = "0799.899.999";
-    private final String secondTypePhoneNumber = "0799-222-101";
+    private final String TypeEmail = "jack_daniels89@gmail.com";
+    private final String TypeCountry = "Romania";
+    private final String TypeCity = "Brasov";
+    private final String TypePostCode = "500789";
+    private final String TypePhoneNumber = "0799.899.999";
+    private final String SecondTypePhoneNumber = "0799-222-101";
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
     private WebElement next;
@@ -29,33 +29,35 @@ public class ThirdPage extends PageObject{
     private WebElement postCode;
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/button[2]")
     private WebElement nextThree;
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[3]/h3")
+    private WebElement textCourseOptions;
 
-    public void clickNext() {
-        this.next.click();
-    }
     public void fillEmail() {
-        this.email.sendKeys(typeEmail);
+        this.email.sendKeys(TypeEmail);
     }
     public void fillPhoneNumber() {
-        this.phoneNumber.sendKeys(typePhoneNumber);
+        this.phoneNumber.sendKeys(TypePhoneNumber);
     }
     public void deletePhoneNumberTwo() {
         this.phoneNumberTwo.clear();
     }
     public void fillPhoneNumberThree() {
-        this.phoneNumber.sendKeys(secondTypePhoneNumber);
+        this.phoneNumber.sendKeys(SecondTypePhoneNumber);
     }
     public void fillCountry() {
-        this.country.sendKeys(typeCountry);
+        this.country.sendKeys(TypeCountry);
     }
     public void fillCity() {
-        this.city.sendKeys(typeCity);
+        this.city.sendKeys(TypeCity);
     }
     public void fillPostCode() {
-        this.postCode.sendKeys(typePostCode);
+        this.postCode.sendKeys(TypePostCode);
     }
     public void clickNextThree() {
         this.nextThree.click();
+    }
+    public String checkTextCourseOptions() {
+        return this.textCourseOptions.getText();
     }
 
     public void navigateToForthPage() {

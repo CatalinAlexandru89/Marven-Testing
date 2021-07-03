@@ -4,9 +4,9 @@ import org.openqa.selenium.support.FindBy;
 
 public class TenthPage extends PageObject {
 
-    private final String typeCardHolderName = "Jack Daniels";
-    private final String typeCardNumber = "3547-3321-0897-6589";
-    private final String typeCVC = "203";
+    private final String TypeCardHolderName = "Jack Daniels";
+    private final String TypeCardNumber = "3547-3321-0897-6589";
+    private final String TypeCVC = "203";
 
     @FindBy(xpath = "//*[@id=\"flexRadioButton3\"]") //click Course Option
     private WebElement automationAndManual;
@@ -28,6 +28,8 @@ public class TenthPage extends PageObject {
     private WebElement pickYear;
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[4]/div[4]/button[2]")
     private WebElement nextFifth;
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[5]/h3")
+    private WebElement textSuccess;
 
     public void clickAutomationAndManual() {
         this.automationAndManual.click();
@@ -36,13 +38,13 @@ public class TenthPage extends PageObject {
         this.nextForth.click();
     }
     public void fillCardHolderName() {
-        this.cardHolderName.sendKeys(typeCardHolderName);
+        this.cardHolderName.sendKeys(TypeCardHolderName);
     }
     public void fillCardNumber() {
-        this.cardNumber.sendKeys(typeCardNumber);
+        this.cardNumber.sendKeys(TypeCardNumber);
     }
     public void fillCVC() {
-        this.CVC.sendKeys(typeCVC);
+        this.CVC.sendKeys(TypeCVC);
     }
     public void clickMonthDropdown() {
         this.monthDropdown.click();
@@ -58,6 +60,9 @@ public class TenthPage extends PageObject {
     }
     public void clickNextFifth() {
         this.nextFifth.click();
+    }
+    public String checkTextSuccess() {
+        return this.textSuccess.getText();
     }
 
     public TenthPage(WebDriver driver) {
