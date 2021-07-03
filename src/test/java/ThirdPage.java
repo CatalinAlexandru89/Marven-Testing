@@ -13,54 +13,47 @@ public class ThirdPage extends PageObject{
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
     private WebElement next;
+    @FindBy(xpath = "//*[@id=\"email\"]")
+    private WebElement email;
+    @FindBy(xpath = "//*[@id=\"phone\"]")
+    private WebElement phoneNumber;
+    @FindBy(xpath = "//*[@id=\"phone\"]")
+    private WebElement phoneNumberTwo;
+    @FindBy(xpath = "//*[@id=\"phone\"]")
+    private WebElement phoneNumberThree;
+    @FindBy(xpath = "//*[@id=\"country\"]")
+    private WebElement country;
+    @FindBy(xpath = "//*[@id=\"city\"]")
+    private WebElement city;
+    @FindBy(xpath = "//*[@id=\"postCode\"]")
+    private WebElement postCode;
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/button[2]")
+    private WebElement nextThree;
+
     public void clickNext() {
         this.next.click();
     }
-
-    @FindBy(xpath = "//*[@id=\"email\"]")
-    private WebElement email;
     public void fillEmail() {
         this.email.sendKeys(typeEmail);
     }
-
-    @FindBy(xpath = "//*[@id=\"phone\"]")
-    private WebElement phoneNumber;
     public void fillPhoneNumber() {
         this.phoneNumber.sendKeys(typePhoneNumber);
     }
-
-    @FindBy(xpath = "//*[@id=\"phone\"]")
-    private WebElement phoneNumberTwo;
     public void deletePhoneNumberTwo() {
         this.phoneNumberTwo.clear();
     }
-
-    @FindBy(xpath = "//*[@id=\"phone\"]")
-    private WebElement phoneNumberThree;
     public void fillPhoneNumberThree() {
         this.phoneNumber.sendKeys(secondTypePhoneNumber);
     }
-
-    @FindBy(xpath = "//*[@id=\"country\"]")
-    private WebElement country;
     public void fillCountry() {
         this.country.sendKeys(typeCountry);
     }
-
-    @FindBy(xpath = "//*[@id=\"city\"]")
-    private WebElement city;
     public void fillCity() {
         this.city.sendKeys(typeCity);
     }
-
-    @FindBy(xpath = "//*[@id=\"postCode\"]")
-    private WebElement postCode;
     public void fillPostCode() {
         this.postCode.sendKeys(typePostCode);
     }
-
-    @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/button[2]")
-    private WebElement nextThree;
     public void clickNextThree() {
         this.nextThree.click();
     }
@@ -73,9 +66,7 @@ public class ThirdPage extends PageObject{
         this.fillPostCode();
         Utils.waitForElementToLoad(3);
         this.clickNextThree();
-    }
-
-
+    } //--folosit pt testele care am nevoie pt. completare prima pagina enrollment. (test 10)
     public ThirdPage(WebDriver driver) {
         super(driver);
     }

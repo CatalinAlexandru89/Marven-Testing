@@ -127,7 +127,7 @@ public class MainPage extends PageObject {
     private WebElement newsletter;
     @FindBy(xpath = "/html/body/section[2]/div/div/div/button")
     private WebElement submitNewsletter;
-    
+
     public void fillNewsletter() {
         this.newsletter.sendKeys(typeNewsletter);
     }

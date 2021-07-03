@@ -12,37 +12,37 @@ public class SecondPage extends PageObject {
 
     @FindBy(xpath = "/html/body/section[1]/div/div/div/a")
     private WebElement startEnrollment;
+    @FindBy(xpath = "//*[@id=\"firstName\"]")
+    private WebElement firstName;
+    @FindBy(xpath = "//*[@id=\"lastName\"]")
+    private WebElement lastName;
+    @FindBy(xpath = "//*[@id=\"username\"]")
+    private WebElement userName;
+    @FindBy(xpath = "//*[@id=\"password\"]")
+    private WebElement password;
+    @FindBy(xpath = "//*[@id=\"cpassword\"]")
+    private WebElement confirmPassword;
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
+    private WebElement next;
+
     public void clickStartEnrollment() {
         this.startEnrollment.click();
     }
-    @FindBy(xpath = "//*[@id=\"firstName\"]")
-    private WebElement firstName;
     public void fillFirstName() {
         this.firstName.sendKeys(typeFirstName);
     }
-    @FindBy(xpath = "//*[@id=\"lastName\"]")
-    private WebElement lastName;
     public void fillLastName() {
         this.lastName.sendKeys(typeLastName);
     }
-    @FindBy(xpath = "//*[@id=\"username\"]")
-    private WebElement userName;
     public void fillUserName() {
         this.userName.sendKeys(typeUsername);
     }
-
-    @FindBy(xpath = "//*[@id=\"password\"]")
-    private WebElement password;
     public void fillPassword() {
         this.password.sendKeys(typePassword);
     }
-    @FindBy(xpath = "//*[@id=\"cpassword\"]")
-    private WebElement confirmPassword;
     public void fillConfirmPassword() {
         this.confirmPassword.sendKeys(typeConfirmPassword);
     }
-    @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
-    private WebElement next;
     public void clickNext() {
         this.next.click();
     }
@@ -55,9 +55,7 @@ public class SecondPage extends PageObject {
         fillConfirmPassword();
         Utils.waitForElementToLoad(3);
         clickNext();
-    }
-
-
+    } //--folosit pt testele care am nevoie pt. completare prima pagina enrollment. (test 3 and 10)
     public SecondPage(WebDriver driver) {
         super(driver);
     }
